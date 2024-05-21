@@ -1,0 +1,20 @@
+---
+title: "Function6"
+output: html_document
+date: "2024-04-23"
+---
+
+library(bio3d)
+
+s1 <- read.pdb("4AKE") # kinase with drug
+
+s1.chainA <- trim.pdb(s1, chain="A", elety="CA")
+
+s1.b <- s1.chainA$atom$b
+
+plotb3(s1.b, sse=s1.chainA, typ="l", ylab="Bfactor") 
+
+function(x){
+  s <- read.pdb(x)
+  
+}
